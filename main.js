@@ -1,7 +1,3 @@
-'use strict';
-
-
-// Массив с данными контактов
 const contacts = [
     {
         img: 'photo/BD694B2E-DF85-4972-8159-8A52FC489255_4_5005_c.jpeg',
@@ -23,17 +19,12 @@ const contacts = [
     }
 ];
 
-
 const template = document.getElementById('contact-card');
 
-
-// Метод генерации контактой карточки
 function createContactCard(contact) {
     const clone = template.content.cloneNode(true);
-
     clone.querySelector('img').src = contact.img;
     clone.querySelector('.name').textContent = contact.name;
-    
     clone.querySelector('.email').textContent = contact.email;
     clone.querySelector('.email').setAttribute(
         'href', `mailto:${contact.email}`
@@ -47,8 +38,6 @@ function createContactCard(contact) {
     document.body.appendChild(clone);
 }
 
-
-// Через цикл пробегаемся по массиву и создаём карточки
 for(const contact of contacts) {
     createContactCard(contact);
 }
